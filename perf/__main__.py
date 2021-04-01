@@ -1,8 +1,10 @@
+from . import config
 from . import cy
 
 __version__ = "0.1.0"
 
-print(cy.primes(100))
+def main():
+    print(cy.primes(100))
 
 
 if __name__ == '__main__':

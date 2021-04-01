@@ -1,4 +1,4 @@
-from . import config
+#from . import config
 from . import cy
 
 __version__ = "0.1.0"
@@ -8,5 +8,5 @@ def main():
 
 
 if __name__ == '__main__':
-    if config.CONFIG['debug']:
-        main()
+    #if config.CONFIG['debug']:
+    main()

@@ -1,5 +1,5 @@
 import time
-# https://everyhue.me/posts/python-performance-analysis/ 
+# https://everyhue.me/posts/python-performance-analysis/
 class Timer(object):
     def __init__(self, verbose=False):
         self.verbose = verbose
@@ -13,4 +13,4 @@ class Timer(object):
         self.secs = self.end - self.start
         self.msecs = self.secs * 1000  # millisecs
         if self.verbose:
-            print 'elapsed time: %f ms' % self.msecs
+            print('elapsed time: %f ms' % self.msecs)

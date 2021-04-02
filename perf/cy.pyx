@@ -15,3 +15,10 @@ def primes(int nb_primes):
         n += 1
     result_as_list  = [prime for prime in p[:len_p]]
     return result_as_list
+
+
+def factorial(int num):
+    if num == 0:
+        return 1
+    else:
+        return factorial(num-1)*num

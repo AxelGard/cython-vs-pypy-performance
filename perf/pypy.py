@@ -5,4 +5,7 @@ def factorial(num):
     else:
         return num*factorial(num-1)
 
-print(factorial(1000))
+#print(factorial(100))
+
+
+

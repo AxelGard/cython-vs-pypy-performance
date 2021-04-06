@@ -7,4 +7,5 @@ def load_config():
         conf = json.load(file)
     return conf
 
+CONFIG = {}
 CONFIG = load_config()

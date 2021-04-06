@@ -22,3 +22,18 @@ def factorial(int num):
         return 1
     else:
         return factorial(num-1)*num
+
+
+def matrix_multiply(int matrix_size, matrix_a, matrix_b):
+    results_matrix = [] 
+    cdef int ans = 0 
+    for i in range(matrix_size):
+        new_matrixrow = []
+        for j in range(matrix_size):
+            for h in range(matrix_size):
+                product = matrix_a[i][h] * matrix_b[h][j]
+                ans += product
+            new_matrixrow.append(ans)
+            ans = 0
+        results_matrix.append(new_matrixrow)
+    return results_matrix       

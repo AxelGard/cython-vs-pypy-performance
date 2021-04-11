@@ -49,3 +49,18 @@ def matrix_multi_test():
 
     return util.result("matrix multiply", results_py, results_cy)
 
+
+def adding_numbers_test():
+    results_py = []
+    for _ in tqdm(range(10)):
+        with Timer() as t:
+            pypy.adding_numbers(10000)
+        results_py.append(t.secs)
+
+    results_cy = []
+    for _ in tqdm(range(10)):
+        with Timer() as t:
+            cy.adding_numbers(10000)
+        results_cy.append(t.secs)
+
+    return util.result("adding numbers", results_py, results_cy)

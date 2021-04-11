@@ -1,5 +1,5 @@
 from . import config
-from . import util 
+from . import util
 from . import tests
 
 
@@ -14,6 +14,9 @@ def main():
 
     mat_res = tests.matrix_multi_test()
     mat_res.display()
+
+    add_num = tests.adding_numbers_test()
+    add_num.display()
 
 
 

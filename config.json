@@ -1,4 +1,4 @@
 {
     "debug": true,
-    "test range": 100000
+    "test range": 10000
 }

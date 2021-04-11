@@ -25,8 +25,8 @@ def factorial(int num):
 
 
 def matrix_multiply(int matrix_size, matrix_a, matrix_b):
-    results_matrix = [] 
-    cdef int ans = 0 
+    results_matrix = []
+    cdef int ans = 0
     for i in range(matrix_size):
         new_matrixrow = []
         for j in range(matrix_size):
@@ -36,4 +36,12 @@ def matrix_multiply(int matrix_size, matrix_a, matrix_b):
             new_matrixrow.append(ans)
             ans = 0
         results_matrix.append(new_matrixrow)
-    return results_matrix       
+    return results_matrix
+
+
+def adding_numbers(int range_):
+    cdef long tot = 0
+    for i in range(1, range_):
+        for j in range(1, range_):
+            tot += i + j
+    return tot

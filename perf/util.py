@@ -1,5 +1,6 @@
 import random
 
+
 def random_matrix(size, range_):
     mat = [[0]*size]*size # allocate
     for i in range(size):
@@ -41,7 +42,6 @@ class singelResult:
     def display(self):
         print(f"{self.name}, avg time of exe:{self.avg}")
         print("\n")
-
 
     def avg(self, lst):
         tot_sum = 0

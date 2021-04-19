@@ -1,6 +1,6 @@
 # cython-vs-pypy-performance
 
-This project is a compearance of PYPY and Cython. 
+This project is a compearance of PYPY and Cython.
 
 PYPY the just in time compiler compered to Cython a mix of C and python.  
 
@@ -12,4 +12,28 @@ python3 -m venv env
 source env/bin/activate
 pip install -r requirements.txt
 sh run.sh
+```
+
+## results
+
+```json
+{
+    "factorial": {
+        "python":[],
+        "cython":[],
+        "pypy":[],
+    },
+
+    "matrix multiply": {
+        "python":[],
+        "cython":[],
+        "pypy":[],
+    },
+
+    "adding numbers": {
+        "python":[],
+        "cython":[],
+        "pypy":[],
+    },
+}
 ```

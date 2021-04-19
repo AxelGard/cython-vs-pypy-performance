@@ -1,11 +1,11 @@
 
 from tqdm import tqdm
 import random
-from . import util
-from . import log
-from . import pypy
-from . import config
-from .timer import Timer
+import util
+import log
+import pypy
+import config
+from timer import Timer
 
 TEST_RANGE = config.CONFIG["test range"]
 
@@ -14,10 +14,10 @@ def run():
     tests = [factorial_test(), matrix_multi_test(), adding_numbers_test()]
     for tst in tests:
         if tst.name in data.keys():
-            data[tst.name]["pypy"] = tst.avg
+            data[tst.name]["py"] = tst.avg
         else:
             data[tst.name] = {}
-            data[tst.name]["pypy"] = tst.avg
+            data[tst.name]["py"] = tst.avg
 
     log.write_file(data)
 

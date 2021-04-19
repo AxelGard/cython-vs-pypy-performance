@@ -11,7 +11,7 @@ TEST_RANGE = config.CONFIG["test range"]
 
 def run():
     data = log.read_file()
-    tests = [factorial_test(), matrix_multi_test(), adding_numbers_test()]
+    tests = [factorial_test(), matrix_multi_test(), adding_numbers_test(), dict_inset_test(), dict_remove_test()]
     for tst in tests:
         if tst.name in data.keys():
             data[tst.name]["pypy"] = tst.avg
@@ -53,6 +53,28 @@ def adding_numbers_test():
         results_py.append(t.secs)
 
     return util.singelResult("adding numbers", results_py)
+
+
+def dict_inset_test():
+    results = []
+    for _ in tqdm(range(100)):
+        with Timer() as t:
+            pypy.dict_inset(100000)
+        results.append(t.secs)
+
+    return util.singelResult("dictionary insert", results)
+
+
+def dict_remove_test():
+    results = []
+    for _ in tqdm(range(100)):
+        dic_ = pypy.dict_inset(100000)
+        with Timer() as t:
+            pypy.dict_remove(dic=dic_)
+        results.append(t.secs)
+
+    return util.singelResult("dictionary remove", results)
+
 
 
 if __name__ == '__main__':

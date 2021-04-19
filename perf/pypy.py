@@ -1,3 +1,4 @@
+import copy
 
 def factorial(num):
     if num == 0:
@@ -28,3 +29,16 @@ def adding_numbers(range_):
         for j in range(1, range_):
             tot += i + j
     return tot
+
+
+def dict_inset(range_):
+    dic = {}
+    for i in range(1, range_):
+        dic[str(i)] = i
+    return dic
+
+def dict_remove(dic):
+    keys = [k for k, v in dic.items()]
+    for i in keys:
+        del dic[i]
+    return dic

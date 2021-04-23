@@ -1,3 +1,8 @@
+from libcpp.map cimport map
+from libcpp.string cimport string
+
+
+
 def primes(int nb_primes):
     cdef int n, i, len_p
     cdef int p[1000]
@@ -45,3 +50,10 @@ def adding_numbers(int range_):
         for j in range(1, range_):
             tot += i + j
     return tot
+
+
+def dict_inset(int range_):
+    cdef map[string, int ] dic
+    for i in range(1, range_):
+        dic[str(i)] = i
+    return dic

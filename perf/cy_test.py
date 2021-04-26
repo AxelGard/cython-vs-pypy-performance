@@ -11,7 +11,7 @@ TEST_RANGE = config.CONFIG["test range"]
 
 def run():
     data = log.read_file()
-    tests = [factorial_test(), matrix_multi_test(), adding_numbers_test()]
+    tests = [factorial_test(), matrix_multi_test(), adding_numbers_test(), integral_test()]
     for tst in tests:
         if tst.name in data.keys():
             data[tst.name]["cython"] = tst.avg
@@ -55,6 +55,16 @@ def adding_numbers_test():
         results.append(t.secs)
 
     return util.singelResult("adding numbers", results)
+
+
+def integral_test():
+    results = []
+    for _ in tqdm(range(10)):
+        with Timer() as t:
+            cy.integrate_f(0.0, 10000, TEST_RANGE)
+        results.append(t.secs)
+    return util.singelResult("integral", results)
+
 
 
 if __name__ == '__main__':

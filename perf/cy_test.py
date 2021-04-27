@@ -22,7 +22,6 @@ def run():
     log.write_file(data)
 
 
-
 def factorial_test():
     results = []
     for _ in tqdm(range(TEST_RANGE)):
@@ -61,7 +60,7 @@ def integral_test():
     results = []
     for _ in tqdm(range(10)):
         with Timer() as t:
-            cy.integrate_f(0.0, 10000, TEST_RANGE)
+            cy.integrate_f(0.0, 100000, TEST_RANGE)
         results.append(t.secs)
     return util.singelResult("integral", results)
 

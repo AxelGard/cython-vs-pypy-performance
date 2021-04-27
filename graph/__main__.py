@@ -12,9 +12,7 @@ def read_file(file="./results.json"):
 
 
 data = read_file()
-for tst, col in data.items():
-    for typ, res in col.items():
-        print(f"{tst}, {typ}, {res}")
-        plt.bar(typ, float(res))
+for tst, res in data.items():
+    plt.bar(np.array(list(res.keys())), np.array(list(res.values())))
     plt.grid(color='#95a5a6', linestyle='--', linewidth=2, axis='y', alpha=0.7)
     plt.savefig(f"./graph/img/{tst}.png")

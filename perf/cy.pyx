@@ -44,6 +44,7 @@ def matrix_multiply(int matrix_size, matrix_a, matrix_b):
 
 def adding_numbers(int range_):
     cdef long tot = 0
+    cdef long i, j = 1
     for i in range(1, range_):
         for j in range(1, range_):
             tot += i + j

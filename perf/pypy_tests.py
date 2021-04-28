@@ -11,7 +11,7 @@ TEST_RANGE = config.CONFIG["test range"]
 
 def run():
     data = log.read_file()
-    tests = [factorial_test(), matrix_multi_test(), adding_numbers_test(), integral_test()]
+    tests = [factorial_test(), matrix_multi_test(), integral_test(), list_search_test()]
     for tst in tests:
         if tst.name in data.keys():
             data[tst.name]["pypy"] = tst.avg
@@ -47,7 +47,7 @@ def matrix_multi_test():
 
 def adding_numbers_test():
     results = []
-    for _ in tqdm(range(10)):
+    for _ in tqdm(range(1000)):
         with Timer() as t:
             pypy.adding_numbers(10000)
         results.append(t.secs)
@@ -78,11 +78,22 @@ def dict_remove_test():
 
 def integral_test():
     results = []
-    for _ in tqdm(range(10)):
+    for _ in tqdm(range(1000)):
         with Timer() as t:
-            pypy.integrate_f(0.0, 10000, TEST_RANGE)
+            pypy.integrate_f(0.0, 10000.0, TEST_RANGE)
         results.append(t.secs)
     return util.singelResult("integral", results)
+
+
+def list_search_test():
+    results = []
+    seq = list(range(2, TEST_RANGE*100))
+    seq.append(1)
+    for _ in tqdm(range(1000)):
+        with Timer() as t:
+            pypy.is_in_seq(seq, 1)
+        results.append(t.secs)
+    return util.singelResult("in list", results)
 
 
 if __name__ == '__main__':

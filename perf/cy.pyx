@@ -62,3 +62,11 @@ def integrate_f(double a, double b, int N):
     for i in range(N):
         s += f(a + i * dx)
     return s * dx
+
+
+def is_in_seq(seq, int val):
+    cdef int val_
+    for val_ in seq:
+        if val_ == val:
+            return True
+    return False

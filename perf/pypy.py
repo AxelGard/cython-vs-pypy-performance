@@ -6,7 +6,6 @@ def factorial(num):
     else:
         return num*factorial(num-1)
 
-#print(factorial(100))
 
 def matrix_multiply(matrix_size, matrix_a, matrix_b):
     results_matrix = []
@@ -54,3 +53,10 @@ def integrate_f(a, b, N):
     for i in range(N):
         s += f(a + i * dx)
     return s * dx
+
+
+def is_in_seq(seq, val):
+    for val_ in seq:
+        if val_ == val:
+            return True
+    return False 

@@ -19,21 +19,23 @@ sh run.sh
 ```json
 {
     "factorial": {
-        "python":[],
-        "cython":[],
-        "pypy":[],
+        "python":0,
+        "cython":0,
+        "pypy":0,
     },
 
     "matrix multiply": {
-        "python":[],
-        "cython":[],
-        "pypy":[],
+        "python":0,
+        "cython":0,
+        "pypy":0,
     },
 
     "adding numbers": {
-        "python":[],
-        "cython":[],
-        "pypy":[],
+        "python":0,
+        "cython":0,
+        "pypy":0,
     },
 }
 ```
+
+The results will be garphs in `graph/img/`

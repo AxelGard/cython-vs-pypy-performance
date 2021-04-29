@@ -11,7 +11,7 @@ TEST_RANGE = config.CONFIG["test range"]
 
 def run():
     data = log.read_file()
-    tests = [factorial_test(), matrix_multi_test(), integral_test(), list_search_test()]
+    tests = [adding_numbers_test(), factorial_test(), matrix_multi_test(), integral_test(), list_search_test()]
     for tst in tests:
         if tst.name in data.keys():
             data[tst.name]["pypy"] = tst.avg
